@@ -1,6 +1,2 @@
-<p>Hello from show file</p>
-
-<% if signed_in? %>
-<%= link_to 'Cerrar sesion', destroy_user_session_path, method: :delete %>
-
-<% end %>
+<h1><%= @article.title %></h1><br>
+<p><%= @article.body %></p><br>
