@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TechArticlesBlog</title>
+    <title>Tech Articles Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,8 +10,10 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
