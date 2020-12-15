@@ -1,1 +1,17 @@
-THIS IS THE HEADER
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+  <a href="#" class="navbar-brand font-weight-bold d-block ml-3"><%= image_tag("techblog.jpg", title: 'Logo') %></a>
+  <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="navbarContent" class="collapse navbar-collapse">
+    <ul class="navbar-nav mx-auto">
+      <!-- Blog -->
+      <li class="nav-item orangify"><a href="" class="font-weight-bold text-uppercase orangify">Home</a></li>
+      <li class="nav-item orangify"><a href="" class="font-weight-bold text-uppercase orangify">Windows</a></li>
+      <li class="nav-item orangify"><a href="" class="font-weight-bold text-uppercase orangify">Linux</a></li>
+      <li class="nav-item orangify"><a href="" class="font-weight-bold text-uppercase orangify">Tools</a></li>
+      <li class="nav-item orangify"><a href="" class="font-weight-bold text-uppercase orangify">Cryptocurrencies</a></li>
+    </ul>
+    <a href="#" class="login-register d-block"><%= link_to 'Login', new_user_session_path, class: 'mr-2 text-dark' %> | <%= link_to 'Register', new_user_registration_path, class: 'mx-2 text-dark' %></a>
+  </div>
+</nav>

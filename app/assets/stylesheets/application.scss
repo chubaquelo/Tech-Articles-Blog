@@ -1,1 +1,18 @@
 @import "bootstrap/scss/bootstrap";
+
+.orangify {
+  font-size: 1.1em;
+  text-decoration: none;
+  color: rgb(71, 71, 71);
+  margin: 0 4px;
+}
+
+.orangify:hover {
+  color: orangered;
+  text-decoration: none;
+}
+
+.login-register {
+  font-size: 0.9em;
+  margin-right: 3em;
+}
