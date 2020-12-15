@@ -1,3 +1,10 @@
 <h1>Title: <%= @article.title %></h1><br>
 <p>Body: <%= @article.body %></p><br>
 <p>Category: <%= @article.category.name %></p><br>
+<br><br>
+
+<p>Image: </p>
+<% if @article.image.attached? %>
+  <%= image_tag @article.image %>
+<% end %>
+<p>Votes: </p>

@@ -11,8 +11,12 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% unless flash[:notice].nil? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% unless flash[:notice].nil? %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
