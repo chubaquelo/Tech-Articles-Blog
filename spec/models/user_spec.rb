@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'ActiveRecord associations' do
+    it 'has many articles' do
+      expect(User.reflect_on_association(:articles).macro).to be (:has_many)
+    end
+  end
 end
