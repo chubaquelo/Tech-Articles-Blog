@@ -5,14 +5,14 @@
     <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
   </div>
 
-    <div class="field">
+  <div class="field">
     <%= f.label :body %><br>
     <%= f.text_area :body, autocomplete: "body" %>
   </div>
 
-     <div class="field">
+  <div class="field">
     <%= f.label :category %><br>
-    <%= f.text_area :category, autocomplete: "category" %>
+    <%= f.select(:category_id, options_for_select(@categories)) %>
   </div>
 
   <div class="field">
