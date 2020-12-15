@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def index
     @categories = Category.all
-    
+    @last_articles = @categories.map {|cat| cat.articles.last}
   end
   
   def show
