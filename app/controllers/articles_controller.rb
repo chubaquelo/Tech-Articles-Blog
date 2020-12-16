@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   def index
     @categories = Category.all
     @last_articles = @categories.map { |cat| cat.articles.last }
+    @main_article = Vote.most_voted_article
   end
 
   def show
