@@ -8,5 +8,13 @@
   <% if @article.image.attached? %>
    <%= image_tag @article.image %>
   <% end %>
-  <p>Votes: </p>
+  
+  <% if signed_in? && !current_user.votes.find_by(article_id: @article.id) %>
+    <p>Votes: <%= @article.votes.count %>.
+    <%= form_with model: @vote, method: :post, url: votes_path do |f| %>
+    <%= f.hidden_field :article_id, :value => params[:id] %> 
+    <%= f.submit 'Upvote this Article', class: 'btn btn-success' %><br><br><br><% end %>
+  <% else %>
+    <p>Votes: <%= @article.votes.count %>.
+  <% end %>
 </div>
