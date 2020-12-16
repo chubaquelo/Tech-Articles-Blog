@@ -7,13 +7,10 @@
     <ul class="navbar-nav mx-auto">
       <!-- Blog -->
       <li class="nav-item orangify"><%= link_to 'Home', root_path, class: "font-weight-bold text-uppercase orangify" %></li>
-      <li class="nav-item orangify"><a href="" class="font-weight-bold text-uppercase orangify">Windows</a></li>
-      <li class="nav-item orangify"><a href="" class="font-weight-bold text-uppercase orangify">Linux</a></li>
-      <li class="nav-item orangify"><a href="" class="font-weight-bold text-uppercase orangify">Tools</a></li>
-      <li class="nav-item orangify"><a href="" class="font-weight-bold text-uppercase orangify">Cryptocurrencies</a></li>
+      <% menu_categories %>
       <% if signed_in? %> <li class="nav-item orangify"><%= link_to 'Add Article', new_article_path, class: "font-weight-bold text-uppercase orangify" %></li> <% end %>
     </ul>
-    <a href="#" class="login-register d-block"><%= link_to 'Login', new_user_session_path, class: 'mr-2 text-dark' %> | <%= link_to 'Register', new_user_registration_path, class: 'mx-2 text-dark' %></a> 
+    <% user_nav_links %>
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search mr-2" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
   <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>

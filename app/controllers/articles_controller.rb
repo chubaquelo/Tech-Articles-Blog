@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
   def index
     @categories = Category.all
-    @last_articles = @categories.map {|cat| cat.articles.last}
+    @last_articles = @categories.map { |cat| cat.articles.last }
   end
-  
+
   def show
     @article = Article.find(params[:id])
   end
@@ -15,12 +15,14 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
+
     if @article.save
       flash[:notice] = 'The article was created succesfully.'
+      redirect_to article_path(@article.id)
     else
       flash[:notice] = 'Some error ocurred. Try again.'
+      render 'new'
     end
-    redirect_to article_path(@article)
   end
 
   private
@@ -28,5 +30,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :body, :category_id, :image)
   end
-
 end

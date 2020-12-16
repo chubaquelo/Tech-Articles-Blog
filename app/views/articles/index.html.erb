@@ -1,9 +1,9 @@
 <div class="container-fluid main-container bg-primary">
   <div class="row bg-primary h-75">
-    <div class="col-9 bg-danger">
+    <div class="col-12 col-lg-9 bg-danger">
       
     </div>
-    <div class="col-3 bg-warning">
+    <div class="d-none col-lg-3 bg-warning">
       
     </div>
   </div>
@@ -12,7 +12,3 @@
     <%= last_articles_per_category %>
   </div>
 </div>
-
-<% if signed_in? %>
-<%= link_to 'Cerrar sesion', destroy_user_session_path, method: :delete %>
-<% end %>

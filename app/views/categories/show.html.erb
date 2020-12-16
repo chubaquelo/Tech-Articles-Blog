@@ -1,0 +1,10 @@
+<h1>Category: <%= @category.name %></h1>
+<h2>Articles:</h2>
+
+<% @articles.each do |art| %>
+  <li>
+    <%= link_to art.title, article_path(art) %>
+  </li>
+<% end %>
+
+<%= link_to 'Back to previous page', :back %>

@@ -1,10 +1,11 @@
 <%= form_with(model: @article, url: articles_path, method: :post) do |f| %>
-
+<!--
   <% if @article.errors.any? %>
     <% @article.errors.each do |error| %>
       <%= "Error: #{error}" %>
     <% end %>  
   <% end %>
+-->
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title, autofocus: true, autocomplete: "title" %>

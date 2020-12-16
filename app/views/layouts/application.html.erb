@@ -10,13 +10,8 @@
   </head>
 
   <body>
+    <% display_flash_messages %>
     <%= render 'layouts/header' %>
-    <% unless flash[:notice].nil? %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% unless flash[:notice].nil? %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

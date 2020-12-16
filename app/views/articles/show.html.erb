@@ -1,10 +1,12 @@
-<h1>Title: <%= @article.title %></h1><br>
-<p>Body: <%= @article.body %></p><br>
-<p>Category: <%= @article.category.name %></p><br>
-<br><br>
+<div class="container mt-5">
+  <h1 class="display-2 text-center"><%= @article.title %></h1><br>
+  <p class="text"><%= @article.body %></p><br>
+  <p>Category: <%= @article.category.name %></p><br>
+  <br><br>
 
-<p>Image: </p>
-<% if @article.image.attached? %>
-  <%= image_tag @article.image %>
-<% end %>
-<p>Votes: </p>
+  <p>Image: </p>
+  <% if @article.image.attached? %>
+   <%= image_tag @article.image %>
+  <% end %>
+  <p>Votes: </p>
+</div>
