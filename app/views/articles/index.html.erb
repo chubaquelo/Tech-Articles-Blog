@@ -1,9 +1,12 @@
-<div class="container-fluid main-container bg-primary">
-  <div class="row bg-primary h-75">
-    <div class="col-12 col-lg-9 bg-danger" style="background-image: url(<%= url_for(@main_article.image) %>) ;">
-      <h1 class="display-3 font-weight-bold mt-5"><%= link_to @main_article.title, article_path(@main_article), class: 'text-white' %></h1>
+<div class="container-fluid main-container">
+  <div class="row h-75" style="background-image: url('building.jpg'); background-size: contain; background-position: center;">
+    <div class="col-12 col-lg-9 bg-danger main-article-container" style="background-image: url(<%= url_for(@main_article.image) %>) ;">
+      <div class="w-75">
+        <h1 class="display-3 font-weight-bold mt-5"><%= link_to @main_article.title, article_path(@main_article), class: 'text-white' %></h1>
+        <p class="display-5 font-weight-bold text-warning"><%= @main_article.body %></p>
+      </div>
     </div>
-    <div class="d-none col-lg-3 bg-warning">
+    <div class="d-none col-lg-3 main-right-container">
       
     </div>
   </div>

@@ -1,5 +1,8 @@
 @import "bootstrap/scss/bootstrap";
 
+//= require_tree
+//= require_self
+
 .orangify {
   font-size: 1.1em;
   text-decoration: none;
@@ -29,4 +32,13 @@
   position: absolute;
   bottom: 0;
   text-align: center;
+}
+
+.main-article-container {
+  padding-top: 20%;
+}
+
+.main-right-container {
+  background-color: black;
+  background-image: url('/assets/building.jpg');
 }
