@@ -1,8 +1,31 @@
-<h1>Categories list</h1>
-<ul>
-<% @categories.each do |cat| %>
-  <li>
-    <%= link_to cat.name, category_path(cat) %>
-  </li>
-<% end %>
-</ul>
+<div class="container-fluid bg-white py-4">
+  
+  <div class="row d-flex flex-wrap">
+<!--
+    <div class="col-6 col-md-3" style="background-image: url(<%= url_for(@categories.first.articles.last.image) %>); background-size: contain;">
+    </div>
+    <div class="col-6 col-md-3">
+      <div><%= @categories.first.name %></div>
+      <div><%= @categories.first.articles.last.title %></div>
+      <div><%= @categories.first.articles.last.body %></div>
+      <div>Read More Link</div>
+    </div>
+    -->
+
+  <% show_categories_resume %>
+  <% show_categories_resume_two %>
+
+  </div>
+  
+
+</div>
+
+
+  <h1>Categories list</h1>
+  <ul>
+  <% @categories.each do |cat| %>
+    <li>
+      <%= link_to cat.name, category_path(cat) %>
+    </li>
+  <% end %>
+  </ul>
