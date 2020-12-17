@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @categories = Category.all
     @last_articles = @categories.map { |cat| cat.articles.last }
