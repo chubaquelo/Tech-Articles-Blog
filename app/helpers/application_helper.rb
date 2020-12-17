@@ -1,7 +1,8 @@
 module ApplicationHelper
   def display_flash_messages
-    concat content_tag(:p, notice, class: 'notice') unless flash[:notice].nil?
-    concat content_tag(:p, alert, class: 'alert') unless flash[:notice].nil?
+    unless flash[:notice].nil?
+      concat content_tag(:p, notice, class: 'alert alert-info m-0 rounded-0 border border-success border-top-0 alert-dismissible')
+    end
   end
 
   def menu_categories

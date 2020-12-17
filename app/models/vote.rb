@@ -4,6 +4,5 @@ class Vote < ApplicationRecord
 
   validates_uniqueness_of :user, scope: :article
 
-  scope :most_voted_article, -> { Article.find(group("article_id").count.sort_by {|k, v| v }.last[0]) }
-
+  scope :most_voted_article, -> { Article.find(group('article_id').count.max_by { |_k, v| v }[0]) }
 end

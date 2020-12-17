@@ -6,7 +6,7 @@ class Article < ApplicationRecord
 
   validate :acceptable_image
   validates_presence_of :title, :body, :category
-  
+
   def self.most_voted
     Article.order(votes: :desc).first
   end

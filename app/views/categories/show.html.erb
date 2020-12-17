@@ -1,12 +1,10 @@
-<div class="container-fluid bg-white">
-  <h1>Category: <%= @category.name %></h1>
-  <h2>Articles:</h2>
+<div class="container-fluid bg-white py-4">
+  
+  <div class="row d-flex flex-wrap">
+  
+    <% show_category_articles %>
 
-  <% @articles.each do |art| %>
-    <li>
-      <%= link_to art.title, article_path(art) %>
-    </li>
-  <% end %>
-
-  <%= link_to 'Back to previous page', :back %>
+  </div>
+  <div class="text-center mt-4"><%= link_to '<< Last articles per category >>', categories_path %></div>
+  <div class="text-center mt-1"><%= link_to '< Back to previous page', :back %></div>
 </div>

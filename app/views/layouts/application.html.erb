@@ -10,9 +10,11 @@
   </head>
 
   <body class="mt-2 px-2 body-bg">
-    <% display_flash_messages %>
     <%= render 'layouts/header' %>
-    <%= yield %>
+    <% display_flash_messages %>
+    <div class="bg-white">
+      <%= yield %>
+    </div>
     <%= render 'layouts/footer' %>
   </body>
 </html>
