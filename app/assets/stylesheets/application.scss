@@ -3,6 +3,23 @@
 //= require_tree
 //= require_self
 
+.body-bg {
+  background-color: #4E443F;
+}
+
+.main-article-title {
+  color: #FB6000;
+}
+
+.main-article-title:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.secondary-articles-titles {
+  text-shadow: 0 0 3px #000;
+}
+
 .orangify {
   font-size: 1.1em;
   text-decoration: none;
@@ -40,5 +57,5 @@
 
 .main-right-container {
   background-color: black;
-  background-image: url('/assets/building.jpg');
+  background-image: url('building.jpg');
 }
