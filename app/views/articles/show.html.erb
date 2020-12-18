@@ -1,21 +1,31 @@
 <div class="container">
-  <h1 class="display-2 text-center"><%= @article.title %></h1><br>
 
-  <% if signed_in? && !current_user.votes.find_by(article_id: @article.id) %>
-    <%= form_with model: @vote, method: :post, url: votes_path do |f| %>
-    <%= f.hidden_field :article_id, :value => params[:id] %> 
-    <%= f.submit 'Upvote this Article', class: 'read-more-link text-decoration-none small d-inline-block' %>
-    <p class='d-inline-block'>Votes: <%= @article.votes.count %>.</p>
-    <br><br><br><% end %>
-  <% else %>
-    <p>Votes: <%= @article.votes.count %>.
-  <% end %>
-  <p>Category: <%= @article.category.name %></p><br>
+  <!-- Hero Image test -->
+  <div class="hero-image">
+    <div class="">
+      <h1 class="pt-5 display-4 font-weight-bold mb-4 text-center text-white" style="text-shadow: 2px 2px 4px #000000;"><%= @article.title %></h1>
+      <p class="text-center" style="text-shadow: 2px 2px 4px #fff;">Author: <%= @article.author.name %> (<%= @article.author.email %>)</p>
+      <div class="text-center">
+        <% if signed_in? && !current_user.votes.find_by(article_id: @article.id) %>
+          <p>Category: <%= @article.category.name %>  |  Votes: <%= @article.votes.count %></p>
+          <%= form_with model: @vote, method: :post, url: votes_path do |f| %>
+          <%= f.hidden_field :article_id, :value => params[:id] %> 
+          <%= f.submit 'Upvote this Article', class: 'text-decoration-none small d-inline-block' %>
+          <br><br><br><% end %>
+        <% else %>
+          <p>Category: <%= @article.category.name %>  |  Votes: <%= @article.votes.count %></p><br><br><br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- Hero Image test -->
+
+  <br>
   <p class="text"><%= @article.body %></p><br>
   <br><br>
 
   <% if @article.image.attached? %>
-   <%= image_tag @article.image %>
+   <%= image_tag @article.image, class:"img-fluid" %>
   <% end %>
   
 </div>
