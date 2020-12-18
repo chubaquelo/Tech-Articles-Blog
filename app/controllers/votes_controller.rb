@@ -1,13 +1,8 @@
 class VotesController < ApplicationController
   def create
     @vote = current_user.votes.build(vote_params)
-    if @vote.save
-      flash[:notice] = 'You voted up this article.'
-      redirect_to article_path(params[:article_id])
-    else
-      flash[:notice] = 'Error ocurred when voting.'
-      redirect_to article_path(params[:article_id])
-    end
+    @vote.save ? flash[:notice] = 'You voted up this article.' : 'Error ocurred when voting.'
+    redirect_to article_path(params[:article_id])
   end
 
   def destroy
