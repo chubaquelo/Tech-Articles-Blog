@@ -10,7 +10,7 @@ module ApplicationHelper
 
     @categories.each do |category|
       concat content_tag(:li, link_to(category.name, category_path(category),
-                                      class: 'font-weight-bold text-uppercase orangify'), class: 'nav-item orangify')
+                                      class: 'font-weight-bold text-uppercase orangify'), class: 'nav-item orangify mx-auto')
     end
   end
 
