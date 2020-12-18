@@ -12,7 +12,7 @@ class User < ApplicationRecord
     super.tap do |user|
       # Include default devise modules. Others available are:
       # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-      if data == session['devise.facebook_data'] && session['devise.facebook_data']['extra']['raw_info'] && user.email.blank?
+      if data = session['devise.facebook_data'] && session['devise.facebook_data']['extra']['raw_info'] && user.email.blank?
         user.email = data['email']
       end
     end
