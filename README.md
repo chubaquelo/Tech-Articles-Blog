@@ -1,24 +1,72 @@
-# README
+# Tech Articles Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a blog application made with Ruby on Rails, where an user can sign up and post articles in the corresponding category.
+A user can also register with a facebook account, and an image can be uploaded to each article.
 
-Things you may want to cover:
+![screenshot](https://i.imgur.com/WklOwjV.jpg)
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby v2.7.1
+- Ruby on Rails v6.0.3.4
+- Postgresql
+- Testing: RSpec and Capybara
+- Rails Gems: DEVISE, OMNIAUTH
 
-* Configuration
+## Live Demo
 
-* Database creation
+[Live Demo](https://peaceful-mesa-79930.herokuapp.com/)
 
-* Database initialization
+### Setup
 
-* How to run the test suite
+Clone the respository on your local machine using the command:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+git clone https://github.com/chubaquelo/Tech-Articles-Blog
+```
 
-* Deployment instructions
+Go inside the created folder:
+```
+cd Tech-Articles-Blog
+```
 
-* ...
+Instal Gems and dependencies:
+
+```
+bundle install
+```
+```
+yarn install --check-files
+```
+
+Run database migration and seed:
+
+```
+   rails db:create
+   rails db:migrate
+   rails db:seed
+```
+
+Run server:
+```
+rails server
+```
+
+Open application in the browser through: http://localhost:3000
+
+
+## Sergio Obolevich
+
+- LinkedIn: [sergio-obolevich](https://www.linkedin.com/in/sergio-obolevich/)
+- Github: [@chubaquelo](https://github.com/chubaquelo)
+- Twitter: [@sergioObolevich](https://twitter.com/sergioObolevich)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/chubaquelo/Tech-Articles-Blog/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
