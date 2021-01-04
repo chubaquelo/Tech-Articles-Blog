@@ -1,6 +1,7 @@
 module ArticlesHelper
   # Print last article per category in Home page.
   def last_articles_per_category
+    # rubocop:disable Style/GuardClause
     if @last_articles.present?
       @last_articles.length.times do |pos|
         concat content_tag(:div, link_to(@last_articles[pos].category.name, category_path(@last_articles[pos].category),
@@ -16,5 +17,6 @@ module ArticlesHelper
         break if pos == @last_articles.length - 1
       end
     end
+    # rubocop:enable Style/GuardClause
   end
 end

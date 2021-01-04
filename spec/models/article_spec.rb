@@ -6,8 +6,12 @@ RSpec.describe Article, type: :model do
       expect(Article.reflect_on_association(:author).macro).to be(:belongs_to)
     end
 
-    it 'has one category' do
-      expect(Article.reflect_on_association(:category).macro).to be(:has_one)
+    it 'belongs to category' do
+      expect(Article.reflect_on_association(:category).macro).to be(:belongs_to)
+    end
+
+    it 'has many votes' do
+      expect(Article.reflect_on_association(:votes).macro).to be(:has_many)
     end
   end
 end

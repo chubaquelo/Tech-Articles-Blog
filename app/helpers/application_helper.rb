@@ -1,9 +1,11 @@
 module ApplicationHelper
   def display_flash_messages
+    # rubocop:disable Style/GuardClause
     unless flash[:notice].nil?
       concat content_tag(:p, notice,
                          class: 'alert alert-info m-0 rounded-0 border border-success border-top-0 alert-dismissible')
     end
+    # rubocop:enable Style/GuardClause
   end
 
   def menu_categories

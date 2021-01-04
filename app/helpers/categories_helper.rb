@@ -14,7 +14,7 @@ module CategoriesHelper
                             content_tag(:div, truncate(cat.articles.last.body, length: 100)) +
                             content_tag(:div, link_to('Read More', article_path(cat.articles.last),
                                                       class: 'read-more-link text-decoration-none'),
-                                        class: 'mt-5'),
+                                        class: ''),
                          class: 'col-6 col-md-3 categories-resume-block')
     end
   end
@@ -28,7 +28,7 @@ module CategoriesHelper
       content_tag(:div, content_tag(:h3, cat.articles.last.title, class: 'font-weigth-bold')) +
       content_tag(:div, truncate(cat.articles.last.body, length: 100)) +
       content_tag(:div, link_to('Read More', article_path(cat.articles.last),
-                                class: 'read-more-link text-decoration-none'), class: 'mt-5'),
+                                class: 'read-more-link text-decoration-none'), class: ''),
                          class: 'col-6 col-md-3 categories-resume-block')
       concat content_tag(:div, content_tag(:div, nil, class: 'layer'), class: 'col-6 col-md-3 px-0',
                                                                        style: "background-image:
@@ -88,7 +88,9 @@ module CategoriesHelper
 
     concat content_tag(:div, content_tag(:div, nil, class: 'layer'), class: 'col-6 col-md-3 px-0',
                                                                      style: "background-image:
-                                                                     url(#{url_for(article.image)});
+                                                                     url(#{if article.image.present?
+                                                                             url_for(article.image)
+                                                                           end});
                                                                      background-size: cover;")
   end
 
