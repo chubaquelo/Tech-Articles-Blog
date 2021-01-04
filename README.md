@@ -11,6 +11,10 @@ A user can also register with a facebook account, and an image can be uploaded t
 - Testing: RSpec and Capybara
 - Rails Gems: DEVISE, OMNIAUTH
 
+## Live Demo
+
+[Live Demo](https://peaceful-mesa-79930.herokuapp.com/)
+
 ### Setup
 
 Clone the respository on your local machine using the command:
