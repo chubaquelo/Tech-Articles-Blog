@@ -3,6 +3,8 @@
 This is a blog application made with Ruby on Rails, where an user can sign up and post articles in the corresponding category.
 A user can also register with a facebook account, and an image can be uploaded to each article.
 
+![screenshot](https://i.imgur.com/WklOwjV.jpg)
+
 ## Built With
 
 - Ruby v2.7.1
