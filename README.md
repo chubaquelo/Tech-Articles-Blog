@@ -11,6 +11,44 @@ A user can also register with a facebook account, and an image can be uploaded t
 - Testing: RSpec and Capybara
 - Rails Gems: DEVISE, OMNIAUTH
 
+### Setup
+
+Clone the respository on your local machine using the command:
+
+```
+git clone https://github.com/chubaquelo/Tech-Articles-Blog
+```
+
+Go inside the created folder:
+```
+cd Tech-Articles-Blog
+```
+
+Instal Gems and dependencies:
+
+```
+bundle install
+```
+```
+yarn install --check-files
+```
+
+Run database migration and seed:
+
+```
+   rails db:create
+   rails db:migrate
+   rails db:seed
+```
+
+Run server:
+```
+rails server
+```
+
+Open application in the browser through: http://localhost:3000
+
+
 ## Sergio Obolevich
 
 - LinkedIn: [sergio-obolevich](https://www.linkedin.com/in/sergio-obolevich/)
