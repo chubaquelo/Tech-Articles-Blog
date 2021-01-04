@@ -1,3 +1,4 @@
 class UsersController < ApplicationController
-  resources :users, only: [:show]
+  def show
+  end
 end
