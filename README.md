@@ -52,6 +52,11 @@ Run server:
 rails server
 ```
 
+You can run Rspec tests with the command:
+```
+rspec spec
+```
+
 Open application in the browser through: http://localhost:3000
 
 
