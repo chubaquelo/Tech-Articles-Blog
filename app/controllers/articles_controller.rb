@@ -3,16 +3,16 @@ class ArticlesController < ApplicationController
 
   def index
     @categories = Category.all
-    @last_articles = Category.all.map { |cat| cat.articles.last }
     @main_article = Vote.most_voted_article
   end
 
   def show
-    @article = Article.includes(:votes, :category).find(params[:id])
+    @article = Article.includes(:votes).find(params[:id])
   end
 
   def new
     @article = current_user.articles.build
+    @article.categorizations.build
     @categories = Category.all.map { |category| [category.name, category.id] }
   end
 
@@ -31,6 +31,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :category_id, :image)
+    params.require(:article).permit(:title, :body, :image, :categorizations_attributes['category_id'])
   end
 end

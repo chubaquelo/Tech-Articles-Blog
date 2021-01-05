@@ -42,7 +42,7 @@ module CategoriesHelper
   # These below are for a single category
   def show_category_articles
     count = 0
-    @articles.each do |article|
+    @category.articles.each do |article|
       option_one(article) if [1, 0].include?(count)
       option_two(article) if [2, 3].include?(count)
       count += 1
@@ -59,7 +59,7 @@ module CategoriesHelper
                                                                                     url_for(article.image)
                                                                                   end});
                                                                             background-size: cover;")
-    concat content_tag(:div, content_tag(:div, link_to(article.category.name, category_path(article.category),
+    concat content_tag(:div, content_tag(:div, link_to(@category.name, category_path(@category),
                                                        class: 'read-more-link text-decoration-none'),
                                          class: 'mt-4 h5 text-dark d-inline-block h5-underline font-weight-bold
                                                text-decoration-none') +
@@ -75,7 +75,7 @@ module CategoriesHelper
   end
 
   def option_two(article)
-    concat content_tag(:div, content_tag(:div, link_to(article.category.name, category_path(article.category),
+    concat content_tag(:div, content_tag(:div, link_to(@category.name, category_path(@category),
                                                        class: 'read-more-link text-decoration-none'),
                                          class: 'mt-4 h5 text-dark d-inline-block h5-underline
                                                font-weight-bold text-decoration-none') +

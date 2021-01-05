@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    @articles = Article.where(category_id: params[:id])
+    @category = Category.includes(:articles).find(params[:id])
+    # @articles = Category.find(params[:id]).articles
   end
 end

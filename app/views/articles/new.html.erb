@@ -19,10 +19,12 @@
       <%= f.text_area :body, autocomplete: "body", class: 'form-control' %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :category, class: 'font-weight-bold d-flex' %>
-      <%= f.select :category_id, options_for_select(@categories), {}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
-    </div>
+    <%= f.fields_for :categorizations do |ff| %>
+      <div class="form-group">
+        <%= ff.label :categories, class: 'font-weight-bold d-flex' %>
+        <%= ff.select :category_id, options_for_select(@categories), {}, { required: 'true', autofocus: 'true', class: 'form-control'} %>
+      </div>
+    <% end %>
 
     <div class="form-group">
       <%= f.label :image, class: 'font-weight-bold d-flex' %>

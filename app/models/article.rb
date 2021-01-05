@@ -1,11 +1,14 @@
 class Article < ApplicationRecord
-  belongs_to :author, foreign_key: 'author_id', class_name: 'User'
-  belongs_to :category
+  belongs_to :author, foreign_key: 'author_id', class_name: 'User', dependent: :destroy
+  has_many :articles_categories
+  has_and_belongs_to_many :categories, :through => :articles_categories
   has_many :votes, dependent: :destroy
   has_one_attached :image
 
   validate :acceptable_image
-  validates_presence_of :title, :body, :category
+  validates_presence_of :title, :body
+
+  # accepts_nested_attributes_for :categorizations
 
   def self.most_voted
     Article.order(votes: :desc).first
