@@ -59,6 +59,14 @@ rspec spec
 
 Open application in the browser through: http://localhost:3000
 
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Note: although rails db:seed will fill the database with some articles, these won't have any images attached to them. Make sure you upload new articles with images once you have the app running.`
+
+## Acknowledgment
+
+- Design of blog app was taken from [Nelson Sawka on Behance](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version)
+- [Devise](https://github.com/heartcombo/devise) and [Omniauth](https://github.com/simi/omniauth-facebook) were used for Facebook Login API integration. API keys (public and secret) are saved as environment variables for security.
+- Database model (ERD) first approach given for this work was:
+![screenshot](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2f4dc4e4-d65d-4570-a4fc-1a0d2daef2c5%2FERD__articles.png?table=block&id=2a9e1547-2f96-423c-b39a-11ee04899979&width=1150&userId=1d1ccd2b-f0ed-44aa-8a39-a763326aee3f&cache=v2)
 
 ## Sergio Obolevich
 
