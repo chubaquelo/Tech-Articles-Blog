@@ -6,9 +6,9 @@ class Article < ApplicationRecord
   has_one_attached :image
 
   validate :acceptable_image
-  validates_presence_of :title, :body
+  validates_presence_of :title, :body, :articles_categories
 
-  # accepts_nested_attributes_for :categorizations
+  accepts_nested_attributes_for :articles_categories
 
   def self.most_voted
     Article.order(votes: :desc).first

@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = current_user.articles.build
-    @article.categorizations.build
+    @article.articles_categories.build
     @categories = Category.all.map { |category| [category.name, category.id] }
   end
 
@@ -31,6 +31,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :image, :categorizations_attributes['category_id'])
+    params.require(:article).permit(:title, :body, :image, articles_categories_attributes: [ :category_id ])
   end
 end

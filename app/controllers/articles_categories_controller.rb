@@ -1,10 +1,10 @@
 class ArticlesCategoriesController < ApplicationController
   def new
-    @categorization = Categorization.new
+    @categorization = ArticlesCategory.new
   end
 
   def create
-    @categorization = Categorization.build(categorization_params)
+    @categorization = ArticlesCategory.build(articles_categories_params)
 
     if @categorization.save
       flash[:notice] = 'The categorization was created succesfully.'
@@ -17,7 +17,7 @@ class ArticlesCategoriesController < ApplicationController
 
   private
 
-  def categorization_params
-    params.require(:categorizations).permit(:category_id, :article_id)
+  def articles_categories
+    params.require(:articles_categories).permit(:category_id, :article_id)
   end
 end
