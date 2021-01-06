@@ -2,8 +2,9 @@ module ArticlesHelper
   # Print last article per category in Home page.
   def last_articles_per_category
 
-    # NEW APPROACH GRABBING ITEMS FROM CATEGORY
-    @categories.length.times do |pos|
+    # NEW NEW APPROACH TRYING TO FIX ERROR
+    4.times do |pos|
+      
       concat content_tag(:div, link_to(@categories[pos].name, category_path(@categories[pos]),
                                          class: 'h5 text-white d-none d-lg-inline-block
                                                 h5-underline font-weight-bold text-decoration-none') +
@@ -14,8 +15,25 @@ module ArticlesHelper
                            style: "background-image: url(#{if @categories[pos].articles.last.image.present?
                                                              url_for(@categories[pos].articles.last.image)
                                                            end}); background-size: cover;")
-        break if pos == @categories.length - 1
+        break if pos == 3
     end
+
+
+    # NEW APPROACH GRABBING ITEMS FROM CATEGORY
+    # @categories.length.times do |pos|
+    #   concat content_tag(:div, link_to(@categories[pos].name, category_path(@categories[pos]),
+    #                                      class: 'h5 text-white d-none d-lg-inline-block
+    #                                             h5-underline font-weight-bold text-decoration-none') +
+    #                       content_tag(:h4, link_to(@categories[pos].articles.last.title, article_path(@categories[pos].articles.last),
+    #                                                class: 'text-white text-decoration-none'),
+    #                                   class: 'text-white article-title-h5 font-weight-bold secondary-articles-titles'),
+    #                        class: 'col-12 col-sm-6 col-lg-3 p-3',
+    #                        style: "background-image: url(#{if @categories[pos].articles.last.image.present?
+    #                                                          url_for(@categories[pos].articles.last.image)
+    #                                                        end}); background-size: cover;")
+    #     break if pos == @categories.length - 1
+    # end
+
 
     # OLD APPROACH BELOW (BEWARE OF RUBOCOP COMMENTS)
 

@@ -1,4 +1,4 @@
-class ArticlesCategoriesController < ApplicationController
+class ArticleCategoriesController < ApplicationController
   def new
     @categorization = ArticlesCategory.new
   end
