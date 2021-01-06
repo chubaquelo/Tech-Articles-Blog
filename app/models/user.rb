@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   devise :omniauthable, omniauth_providers: [:facebook]
 
+  validates_presence_of :username, :name, :email, :password, :password_confirmation
+
   def self.new_with_session(params, session)
     super.tap do |user|
       # Include default devise modules. Others available are:

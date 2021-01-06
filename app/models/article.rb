@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   has_one_attached :image
 
   validate :acceptable_image
-  validates_presence_of :title, :body, :articles_categories
+  validates_presence_of :title, :body
 
   accepts_nested_attributes_for :articles_categories
 

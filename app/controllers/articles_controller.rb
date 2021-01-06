@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   def index
     @categories = Category.all
     @main_article = Vote.most_voted_article
+    @city = request.location.city
   end
 
   def show

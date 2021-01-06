@@ -7,13 +7,13 @@
       <p class="text-center" style="text-shadow: 2px 2px 4px #fff;">Author: <%= @article.author.name %> (<%= @article.author.email %>)</p>
       <div class="text-center">
         <% if signed_in? && !current_user.votes.find_by(article_id: @article.id) %>
-          <p>Categories: <%= @article.categories.map(&:name).inspect %>  |  Votes: <%= @article.votes.count %></p>
+          <p>Categories: <% @article.categories.each {|c| concat link_to c.name, category_path(c), class: 'mr-1'} %>  |  Votes: <%= @article.votes.count %></p>
           <%= form_with model: @vote, method: :post, url: votes_path do |f| %>
           <%= f.hidden_field :article_id, :value => params[:id] %> 
           <%= f.submit 'Upvote this Article', class: 'text-decoration-none small d-inline-block' %>
           <br><br><br><% end %>
         <% else %>
-          <p>Category: <%= @article.category.name %>  |  Votes: <%= @article.votes.count %></p><br><br><br>
+          <p>Categories: <% @article.categories.each {|c| concat link_to c.name, category_path(c), class: 'mr-1'} %>  |  Votes: <%= @article.votes.count %></p><br><br><br>
         <% end %>
       </div>
     </div>

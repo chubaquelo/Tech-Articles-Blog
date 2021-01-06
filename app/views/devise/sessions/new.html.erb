@@ -1,10 +1,15 @@
 <div class='col-12 col-md-3 mx-auto py-5 border text-center'>
   <h2 class='display-5 font-weight-bold mb-4'>Log in</h2>
 
-  <%= render "devise/shared/error_messages", resource: resource %>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
     <%= render "devise/shared/error_messages", resource: resource %>
+
+    <% flash.each do |name, msg| %>
+     <%= content_tag :div, msg, class: 'text-danger', :id => "flash_#{name}" if msg.is_a?(String) %>
+    <% end %>
+
     <div class="form-group">
       <%= f.label :email %><br>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
