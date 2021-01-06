@@ -23,8 +23,8 @@ class ArticlesController < ApplicationController
       flash[:notice] = 'The article was created succesfully.'
       redirect_to article_path(@article.id)
     else
-      flash[:notice] = 'Some error ocurred. Try again.'
-      render 'new'
+      flash[:notice] = 'All fields must be completed (only image is optional). Try again.'
+      redirect_to new_article_path
     end
   end
 
