@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
   belongs_to :author, foreign_key: 'author_id', class_name: 'User', dependent: :destroy
   has_many :articles_categories
-  has_and_belongs_to_many :categories, :through => :articles_categories
+  has_and_belongs_to_many :categories, through: :articles_categories
   has_many :votes, dependent: :destroy
   has_one_attached :image
 
