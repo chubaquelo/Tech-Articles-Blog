@@ -13,5 +13,6 @@ RSpec.describe Article, type: :model do
     it 'has many votes' do
       expect(Article.reflect_on_association(:votes).macro).to be(:has_many)
     end
+    
   end
 end

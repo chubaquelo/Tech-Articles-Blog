@@ -12,8 +12,6 @@ class User < ApplicationRecord
 
   def self.new_with_session(params, session)
     super.tap do |user|
-      # Include default devise modules. Others available are:
-      # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
       # rubocop:disable Lint/AssignmentInCondition, Layout/LineLength
       if data = session['devise.facebook_data'] && session['devise.facebook_data']['extra']['raw_info'] && user.email.blank?
         user.email = data['email']
