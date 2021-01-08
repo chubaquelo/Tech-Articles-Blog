@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-2 shadow-sm">
+  <%= link_to image_tag("techblog-logo.png", style: 'height:55px; width:auto;', title: 'Logo'), root_path, class: "navbar-brand font-weight-bold d-block ml-3" %>
+  <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="navbarContent" class="collapse navbar-collapse">
+    <ul class="navbar-nav mx-auto">
+      <!-- Blog -->
+      <li class="nav-item orangify mx-auto"><%= link_to 'Home', root_path, class: "font-weight-bold text-uppercase orangify" %></li>
+      <% menu_categories %>
+      <% if signed_in? %> <li class="mx-auto"><%= button_to 'Add an Article', new_article_path, method: :get, class: "read-more-link text-decoration-none small d-inline-block" %></li> <% end %>
+    </ul>
+    <ul class="navbar-nav"><li class="mx-auto p-0 m-0"><% user_nav_links %></li></ul>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search mr-2 d-none d-md-block" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+  <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+</svg>
+  </div>
+</nav>

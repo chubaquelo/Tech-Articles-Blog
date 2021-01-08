@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="hero-image">
+    <div>
+      <h1 class="pt-5 display-4 font-weight-bold mb-4 text-center text-white" style="text-shadow: 2px 2px 4px #000000;"><%= @article.title %></h1>
+      <p class="text-center" style="text-shadow: 2px 2px 4px #fff;">Author: <%= @article.author.name %> (<%= @article.author.email %>)</p>
+      <div class="text-center">
+        <% show_votes_info %>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <p class="text"><%= @article.body %></p>
+  <br><br><br>
+
+  <% show_article_image %>
+  
+</div>
